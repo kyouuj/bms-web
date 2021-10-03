@@ -3,15 +3,15 @@ const axios = require('axios');
 
 
 $(() => {
-  $('a[href*="#"]:not([href="#"])').click((e) => {
-    const target = $(e.target.hash);
+  // $('a[href*="#"]:not([href="#"])').click((e) => {
+  //   const target = $(e.target.hash);
 
-    if (target.length) {
-      $('html, body').animate({
-        scrollTop: target.offset().top
-      }, 1000);
+  //   if (target.length) {
+  //     $('html, body').animate({
+  //       scrollTop: target.offset().top
+  //     }, 1000);
 
-      return false;
-    }
-  })
+  //     return false;
+  //   }
+  // })
 })
