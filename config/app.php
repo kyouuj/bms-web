@@ -175,6 +175,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * My Service Providers
+         */
+        App\Providers\ServiceBindServiceProvider::class,
+        // App\Providers\RepositoryBindServiceProvider::class,
     ],
 
     /*

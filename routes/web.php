@@ -18,4 +18,6 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/books', [App\Http\Controllers\Web\BookController::class, 'list'])->name('book');
+    Route::get('/libraries', [App\Http\Controllers\Web\LibraryController::class, 'list'])->name('book');
 });
