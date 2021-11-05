@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Web\BookController;
+use App\Http\Controllers\Web\LibraryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,11 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/books', [App\Http\Controllers\Web\BookController::class, 'list'])->name('book');
-    Route::get('/libraries', [App\Http\Controllers\Web\LibraryController::class, 'list'])->name('book');
+
+    Route::get('/libraries', [LibraryController::class, 'list'])->name('libraries.list');
+    Route::get('/libraries/{library}', [LibraryController::class, 'detail'])->name('libraries.libary');
+
+    Route::get('/books', [BookController::class, 'list'])->name('books.list');
+    Route::post('/libraries/{library}/checkout', [BookController::class, 'checkOut'])->name('books.checkOut');
+    Route::post('/libraries/{library}/checkin', [BookController::class, 'checkIn'])->name('books.checkIn');
 });

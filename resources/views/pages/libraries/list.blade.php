@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Sách')
+@section('title', 'Danh sách thư viện')
 
 @section('content_header')
     <h1>Danh sách thư viện</h1>

@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-interface LibraryService {
+interface LibraryService extends GenericService {
 
 }
 

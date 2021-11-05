@@ -1,0 +1,8 @@
+<?php
+
+namespace App\Repositories\Impls;
+
+use App\Repositories\%%CLASS%%;
+
+class %%CLASS%%Impl extends GenericRepositoryImpl implements %%CLASS%% {
+}

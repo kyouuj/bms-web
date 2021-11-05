@@ -14,4 +14,9 @@ class LibraryController extends Controller
             'libraries' => $libraries
         ]);
     }
+
+    public function detail(Library $library) {
+        $books = $library->books()->paginate(15);
+        return view('pages.libraries.library', compact('library', 'books'));
+    }
 }

@@ -1,12 +1,19 @@
 @extends('adminlte::page')
 
-@section('title', 'Quản lý sách')
+@section('title', 'Thư viện')
 
 @section('content_header')
-<h1>Quản lý sách</h1>
+    <h1>Thư viện {{ $library->name }}</h1>
 @stop
 
 @section('content')
+  <div class="row mb-2">
+    <div class="col-md-12 text-right">
+      <button class="btn btn-info">Mượn sách</button>
+      <button class="btn btn-light">Trả sách</button>
+    </div>
+  </div>
+
   <x-adminlte-card>
     <x-table-view :source="$books">
       <x-slot name="header">
@@ -15,7 +22,7 @@
           <th>Tiêu đề</th>
           <th>Tác giả</th>
           <th>ISBN</th>
-          <th>Ngày tạo</th>
+          <th>Số lượng</th>
         </tr>
       </x-slot>
 
@@ -25,7 +32,7 @@
           <td>{{ $item->title }}</td>
           <td>{{ $item->author }}</td>
           <td>{{ $item->isbn }}</td>
-          <td>{{ date('d-m-Y', strtotime($item->created_at)); }}</td>
+          <td>{{ $item->pivot->quantity }}</td>
         </tr>
       @endforeach
     </x-table-view>

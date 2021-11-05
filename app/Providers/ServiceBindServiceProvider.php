@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Services\LibraryService;
 use App\Services\LibraryServiceImpl;
+use App\Services\BookService;
+use App\Services\BookServiceImpl;
 
 
 class ServiceBindServiceProvider extends ServiceProvider
@@ -23,10 +25,13 @@ class ServiceBindServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    // public $singletons = [
-    //     DowntimeNotifier::class => PingdomDowntimeNotifier::class,
-    //     ServerProvider::class => ServerToolsProvider::class,
-    // ];
+    public $singletons = [
+        // DowntimeNotifier::class => PingdomDowntimeNotifier::class,
+        // ServerProvider::class => ServerToolsProvider::class,
+        \App\Services\LibraryService::class => \App\Services\Impls\LibraryServiceImpl::class,
+        \App\Services\BookService::class => \App\Services\Impls\BookServiceImpl::class,
+        /* NEW BINDING */
+    ];
 
     /**
      * Register services.
@@ -35,7 +40,6 @@ class ServiceBindServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(LibraryService::class, LibraryServiceImpl::class);
     }
 
     /**

@@ -11,6 +11,6 @@ class Library extends Model
     use HasFactory;
 
     public function books() {
-        return $this->belongsToMany(Book::class);
+        return $this->belongsToMany(Book::class, 'library_books', 'library_id', 'book_id')->withPivot('quantity');
     }
 }

@@ -179,7 +179,7 @@ return [
          * My Service Providers
          */
         App\Providers\ServiceBindServiceProvider::class,
-        // App\Providers\RepositoryBindServiceProvider::class,
+        App\Providers\RepositoryBindServiceProvider::class,
     ],
 
     /*
