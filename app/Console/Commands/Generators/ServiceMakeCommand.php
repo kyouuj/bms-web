@@ -37,7 +37,11 @@ class ServiceMakeCommand extends GeneratorCommandBase
         //     return false;
         // }
 
-        return $this->bindInterface($name);
+        if (!$this->bindInterface($name)) {
+            return false;
+        }
+        $this->info('Service created successful.');
+        return true;
     }
 
     /**

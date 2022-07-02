@@ -38,6 +38,10 @@ class GenericRepositoryImpl implements GenericRepository {
 
     //     return $query->get();
     // }
+    
+    public function findById($id) {
+        return $this->model->where('id', $id)->first();
+    }
 
     private function dynamicCount($method, $parameters)
     {

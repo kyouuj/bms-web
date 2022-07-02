@@ -10,7 +10,7 @@
   <div class="row mb-2">
     <div class="col-md-12 text-right">
       <button class="btn btn-info">Mượn sách</button>
-      <button class="btn btn-light">Trả sách</button>
+      <button class="btn btn-primary">Trả sách</button>
     </div>
   </div>
 

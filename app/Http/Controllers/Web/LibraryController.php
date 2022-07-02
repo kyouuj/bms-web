@@ -10,9 +10,7 @@ class LibraryController extends Controller
 {
     public function list() {
         $libraries = Library::paginate(15);
-        return view('pages.libraries.list', [
-            'libraries' => $libraries
-        ]);
+        return view('pages.libraries.list', compact('libraries'));
     }
 
     public function detail(Library $library) {

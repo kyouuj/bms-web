@@ -27,11 +27,17 @@ class RepositoryMakeCommand extends GeneratorCommandBase
 
     protected function generate($name)
     {
-        $this->generateInterface($name);
-        $this->generateRepository($name);
+        if (!$this->generateInterface($name)) {
+            return false;
+        }
+        if (!$this->generateRepository($name)) {
+            return false;
+        }
         // $this->generateUnitTest($name);
-
-        return $this->bindInterface($name);
+        if (!$this->bindInterface($name)) {
+            return false;
+        }
+        $this->info('Repository created successful.');
     }
 
     /**
